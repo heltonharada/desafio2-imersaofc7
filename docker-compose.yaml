@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+
+  app:
+    build: .
+    container_name: desafio2-transaction-api-nest
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/home/node/app
+
+  db:
+    build: .docker/sqlite
