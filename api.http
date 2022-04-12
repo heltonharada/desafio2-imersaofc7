@@ -8,6 +8,6 @@ Content-Type: application/json
 
 
 {
-    "type":"credit",
-    "amount":6500.30
+    "tipo" : "debit",
+    "amount" : 20000
 }

@@ -1,19 +1,12 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
-import { CreateTransactionsDto } from './dto/create-transactions.dto';
-import { TransactionsService } from './app.service';
+import { Controller, Get } from '@nestjs/common';
+import { AppService } from './app.service';
 
-@Controller('transactions')
-export class TransactionsController {
-  constructor(private readonly transactionsService: TransactionsService) {}
+@Controller()
+export class AppController {
+  constructor(private readonly appService: AppService) {}
 
   @Get()
-  findAll() {
-    console.log('Estas são suas transações');
-    return this.transactionsService.findAll();
-  }
-  @Post()
-  create(@Body() createTransactionsDto: CreateTransactionsDto) {
-    console.log(createTransactionsDto);
-    return this.transactionsService.create(createTransactionsDto);
+  getHello(): string {
+    return this.appService.getHello();
   }
 }

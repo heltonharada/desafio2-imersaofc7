@@ -1,14 +1,14 @@
 version: '3'
 
 services:
-
   app:
     build: .
-    container_name: desafio2-transaction-api-nest
+    command: "sh -c 'npm install && npm run start:dev'"
+    # container_name: desafio2-transaction-api-nest
     ports:
       - 3000:3000
     volumes:
       - .:/home/node/app
 
-  db:
-    build: .docker/sqlite
+  # db:
+  #   build: .docker/database.sqlite
